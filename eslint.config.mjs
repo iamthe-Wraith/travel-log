@@ -8,6 +8,7 @@ export default withNuxt(antfu({
     vue: true,
     typescript: true,
     formatters: true,
+    ignores: ['**/*.yml', '**/*.yaml'],
     stylistic: {
         indent: 4,
         semi: true,
