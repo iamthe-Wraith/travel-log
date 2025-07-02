@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    modules: ['@nuxt/eslint'],
+    modules: ['@nuxt/eslint', '@nuxt/icon'],
     eslint: {
         config: {
             standalone: false,

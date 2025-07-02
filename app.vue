@@ -5,7 +5,7 @@
         </h1>
 
         <button class="btn btn-primary">
-            Click me!
+            Click me! <Icon name="tabler:map" />
         </button>
     </div>
 </template>
