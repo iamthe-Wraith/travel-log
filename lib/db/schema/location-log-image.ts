@@ -1,11 +1,13 @@
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
+import { user } from './auth';
 import { locationLog } from './location-log';
 
 export const locationLogImage = sqliteTable('location_log_image', {
-    id: integer('id').primaryKey(),
-    key: text('key').notNull(),
-    locationLogId: integer('location_log_id').notNull().references(() => locationLog.id),
-    createdAt: integer('created_at').notNull().$default(() => Date.now()),
-    updatedAt: integer('updated_at').notNull().$default(() => Date.now()).$onUpdate(() => Date.now()),
+    id: integer().primaryKey(),
+    key: text().notNull(),
+    locationLogId: integer().notNull().references(() => locationLog.id),
+    userId: integer().notNull().references(() => user.id),
+    createdAt: integer().notNull().$default(() => Date.now()),
+    updatedAt: integer().notNull().$default(() => Date.now()).$onUpdate(() => Date.now()),
 });
