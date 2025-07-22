@@ -9,7 +9,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      NODE_ENV: development
+      TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+      TURSO_CONNECTION_URL: ${{ secrets.TURSO_CONNECTION_URL }}
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
